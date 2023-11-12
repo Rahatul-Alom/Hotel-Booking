@@ -2,10 +2,10 @@ const Banner = () => {
   return (
     <div>
       <div className="bg-cover  bg-center min-h-screen"
-        style={{ backgroundImage: "url(https://i.ibb.co/JnL6F9b/34-6.jpg)" }}
+        style={{ backgroundImage: "url(https://i.ibb.co/Zdn6v6v/3964.webp)" }}
       >
-        <div className="min-h-screen bg-black bg-opacity-30">
-          <div className="pl-9 pt-9 lg:pt-36">
+        <div className="min-h-screen bg-black bg-opacity-50">
+          <div className="pl-9 pt-9 lg:pt-32">
             <h1 className=" text-3xl md:text-5xl lg:text-7xl text-white  font-bold">
              Luxury Service <br /> 
             </h1>
