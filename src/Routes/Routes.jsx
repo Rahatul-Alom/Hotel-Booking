@@ -9,6 +9,7 @@ import ContuctUs from "../Pages/ContuctUs/ContuctUs";
 import Rooms from "../Pages/Rooms/Rooms";
 import MyBooking from "../Pages/MyBooking/MyBooking";
 import PrivateRoutes from "./PrivateRoutes";
+import ShowRoomsDetails from "../Pages/Rooms/RoomsDetails";
 
 const router = createBrowserRouter([
     {
@@ -39,7 +40,12 @@ const router = createBrowserRouter([
         {
           path: '/rooms',
           element: <Rooms></Rooms>,
-          loader: ()=> fetch('http://localhost:5000/rooms/:id') 
+          loader: ()=> fetch(`http://localhost:5000/rooms`) 
+        },
+        {
+          path: "rooms/:id",
+          element: <ShowRoomsDetails></ShowRoomsDetails>,
+          loader: ({params})=> fetch(`http://localhost:5000/rooms/${params.id}`)
         },
         {
           path: '/myBooking',
