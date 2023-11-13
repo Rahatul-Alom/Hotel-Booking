@@ -32,6 +32,17 @@ const Login = () => {
             console.log(error)
             toast(error.message)
         })
+
+        googleLogIn(email, password)
+          .then(result => {
+            console.log(result)
+             // navigate after login
+             navigate(location?.state ? location.state : "/" )
+          })
+        .catch( error =>{
+            console.log(error)
+            toast(error.message)
+        })
     }
 
     return (

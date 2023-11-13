@@ -2,7 +2,7 @@ import {MdLocalOffer} from 'react-icons/md';
 const SpecialOffer = () => {
   return (
     <div>
-      <h1 className="text-5xl font-bold text-center pt-24">Special Offer!!</h1>
+      <h1 className="text-6xl font-bold text-center pt-24">Special Offer!!</h1>
       <div className="hero pt-9">
         <div className="hero-content flex-col lg:flex-row">
           <img
