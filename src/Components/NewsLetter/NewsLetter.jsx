@@ -2,7 +2,7 @@ import {AiOutlineCalendar} from 'react-icons/ai';
 const NewsLetter = () => {
   return (
     <div className=" my-28 mx-auto max-w-7xl">
-      <h1 className="text-6xl font-bold text-center pb-12">News Letter</h1>  
+      <h1 className="text-6xl font-bold text-center pb-12">Latest News</h1>  
         <div className='flex flex-col lg:flex-row gap-7 items-center'>
         <div className="w-96 bg-base-100 shadow-xl h-96">
         <figure>
