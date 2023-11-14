@@ -6,19 +6,20 @@ const ShowRoomsDetails = () => {
     const [details, setDetails] = useState([])
     const {_id} = useParams()
 
+
     const roomDetails = useLoaderData();
     console.log(roomDetails)
 
     useEffect(()=>{
-        const seeRoomDetails = roomDetails.find((roomDetail)=> roomDetail._id === _id)
-        setDetails(seeRoomDetails)
+        const seeRoomDetails = roomDetails.find((detail) => detail._id === _id);
+        setDetails(seeRoomDetails);
     },[_id,roomDetails])
 
    
     return (
         <div>
            {
-             <ShowRoomDetails roomDetails={roomDetails}  ></ShowRoomDetails>
+             <ShowRoomDetails details={details}></ShowRoomDetails>
            }
         </div>
     );

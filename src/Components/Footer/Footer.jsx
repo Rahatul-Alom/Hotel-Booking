@@ -4,8 +4,8 @@ const Footer = () => {
       <footer className="footer footer-center mt-12 p-10 bg-[#aa825d] text-white">
         <aside>
           <p className="font-bold text-lg my-4">
-            Auto Car Automotive Brand Ltd. <br />
-            Providing Most Popular Brand Car since 1990
+            Hotel Five Star Ltd. <br />
+            Luxury 5 Star Hotel Service since 1990
           </p>
           <p>Copyright © 2023 - All right reserved</p>
         </aside>
