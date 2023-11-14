@@ -1,3 +1,4 @@
+import { MdAddHome } from "react-icons/md";
 const ShowRoomDetails = ({ details }) => {
   const { image, room_title, price_per_night, size, special_offer, description } = details;
   return (
@@ -11,6 +12,8 @@ const ShowRoomDetails = ({ details }) => {
             <p className="text-lg mt-1"><b>Room Size:</b>  {size}</p>
             <p className="text-lg mt-1"><b>Special Offer:</b> {special_offer}</p>
             <p className="text-lg text-justify mt-2"><b>Description:</b> {description}</p>
+            <button className="btn mt-5 bg-[#aa825d] text-white font-semibold"><MdAddHome className="text-xl" />
+            Book Now</button>
         </div>
     </div>
   );

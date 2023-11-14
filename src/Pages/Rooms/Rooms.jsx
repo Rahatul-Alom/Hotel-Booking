@@ -1,5 +1,5 @@
 import {useLoaderData } from "react-router-dom";
-import ShowRooms from "./ShowRooms,";
+import ShowRooms from "./ShowRooms";
 
 const Rooms = () => {
     const rooms = useLoaderData()
