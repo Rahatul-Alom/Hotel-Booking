@@ -11,9 +11,7 @@ const ShowRoomDetails = ({ details }) => {
             <p className="text-lg mt-1"><b>Room Size:</b>  {size}</p>
             <p className="text-lg mt-1"><b>Special Offer:</b> {special_offer}</p>
             <p className="text-lg text-justify mt-2"><b>Description:</b> {description}</p>
-
         </div>
-
     </div>
   );
 };
