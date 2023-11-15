@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { BiLogoGoogle } from 'react-icons/bi';
 import { useContext } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
+import axios from "axios";
 
 
 const Login = () => {
@@ -23,9 +24,14 @@ const Login = () => {
         signIn(email,password)
         .then(result => {
             console.log(result)
+          const user = {email}
             
             // navigate after login
-            navigate(location?.state ? location.state : "/" )
+            // navigate(location?.state ? location.state : "/" )
+        axios.post('http://localhost:5000/jwt', user)
+          .then(res => {
+            console.log(res.data)
+          })
 
         })
         .catch( error =>{

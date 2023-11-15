@@ -1,6 +1,6 @@
 import { MdAddHome } from "react-icons/md";
 const ShowRoomDetails = ({ details }) => {
-  const { image, room_title, price_per_night, size, special_offer, description, location } = details;
+  const { image, room_title, price_per_night, size, special_offer, description, location } = details || {};
   return (
     <div className="flex flex-col justify-center lg:flex-row mx-auto max-w-7xl my-20">
         <div className="">
