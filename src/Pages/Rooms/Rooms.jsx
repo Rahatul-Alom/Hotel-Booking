@@ -7,13 +7,15 @@ const Rooms = () => {
   return (
     <div className="mx-auto max-w-7xl ">
       <div className="mt-20">
-        <h1 className="font-bold my-4 text-xl">Filter with price</h1>
+        <h1 className="font-bold my-4 text-xl">Filter with price range</h1>
         <select className="select select-bordered w-full max-w-xs">
           <option disabled selected>
-            Who shot first?
+            Select Price
           </option>
-          <option>Han Solo</option>
-          <option>Greedo</option>
+          <option>$0-$100</option>
+          <option>$100-$200</option>
+          <option>$200-$300</option>
+          <option>$300-$500</option>
         </select>
       </div>
       <div className="grid grid-cols-3 gap-9 mt-20">
