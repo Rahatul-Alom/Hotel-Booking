@@ -9,7 +9,7 @@ const Rooms = () => {
       <div className="mt-20">
         <h1 className="font-bold my-4 text-xl">Filter with price range</h1>
         <select className="select select-bordered w-full max-w-xs">
-          <option disabled selected>
+          <option defaultValue={ 'Select Price'} disabled selected>
             Select Price
           </option>
           <option>$0-$100</option>
