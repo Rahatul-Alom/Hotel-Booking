@@ -18,7 +18,7 @@ const ShowRoomDetails = ({ details }) => {
             <input type="radio" name="rating-5" className="mask mask-star-2 bg-orange-400" checked />
             <p className="text-lg text-justify mt-2"><b>Description:</b> {description}</p>
             <input className="border-2 border-black p-2 mt-4 rounded-lg" type="date" name="" id="" /> <br />
-          <Link to={`/bookService/${_id}`}>
+          <Link to={`/bookRoom/${_id}`}>
               <button className="btn mt-5 bg-[#aa825d] text-white font-semibold"><MdAddHome className="text-xl" />
             Book Now</button>
           </Link>

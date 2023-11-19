@@ -10,7 +10,7 @@ import Rooms from "../Pages/Rooms/Rooms";
 import MyBooking from "../Pages/MyBooking/MyBooking";
 import PrivateRoutes from "./PrivateRoutes";
 import ShowRoomsDetails from "../Pages/Rooms/RoomsDetails";
-import BookService from "../Pages/BookRoom/BookRoom";
+import BookRoom from "../Pages/BookRoom/BookRoom"
 
 const router = createBrowserRouter([
     {
@@ -53,8 +53,8 @@ const router = createBrowserRouter([
           element: <PrivateRoutes><MyBooking></MyBooking></PrivateRoutes>
         },
         {
-          path: '/bookService/:id',
-          element: <BookService></BookService>,
+          path: '/bookRoom/:id',
+          element: <PrivateRoutes><BookRoom></BookRoom></PrivateRoutes>,
           loader: ({params})=> fetch(`http://localhost:5000/rooms/${params.id}`)
         }
       ]
