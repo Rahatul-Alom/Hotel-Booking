@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import ShowMybookings from "./ShowMybookings";
+import Swal from "sweetalert2";
 
 const MyBooking = () => {
   const { user } = useContext(AuthContext);
@@ -14,10 +15,42 @@ const MyBooking = () => {
       axiosSecure.get(url)
         .then(res=> setBookings(res.data))
   }, [url, axiosSecure]);
+
+  const handleDelete = id =>{
+        fetch(`http://localhost:5000/bookings/${id}`,{
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data =>{ console.log(data);
+          if(data.deletedCount > 0){
+            Swal.fire({
+              title: 'Are you sure?',
+              text: "You won't be able to revert this!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                Swal.fire(
+                  'Deleted!',
+                  'Your product has been deleted fom your cart.',
+                  'success'
+                )               
+              }
+              const remainig = bookings.filter(booking => booking._id !== id)
+              setBookings(remainig)
+            })
+          }
+        })
+  }
+
+
   return (
     <div className="grid-cols-1 space-y-12">
       {
-        bookings.map(booking => <ShowMybookings key={booking._id} booking={booking}></ShowMybookings>)
+        bookings.map(booking => <ShowMybookings key={booking._id} booking={booking} handleDelete ={handleDelete}></ShowMybookings>)
       }
 
     </div>
