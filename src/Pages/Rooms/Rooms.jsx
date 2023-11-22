@@ -3,18 +3,19 @@ import ShowRooms from "./ShowRooms";
 
 const Rooms = () => {
   const rooms = useLoaderData();
+  
   console.log(rooms);
   return (
     <div className="mx-auto max-w-7xl ">
       <div className="mt-20">
         <h1 className="font-bold my-4 text-xl">Filter with price range</h1>
-        <select className="select select-bordered w-full max-w-xs">
-          <option defaultValue={ 'Select Price'} disabled selected>
+        <select selected defaultValue={ 'Select Price'} className="select select-bordered w-full max-w-xs">
+          <option disabled>
             Select Price
           </option>
-          <option>$0-$100</option>
-          <option>$100-$200</option>
-          <option>$200-$300</option>
+          <option >$0-$100</option>
+          <option >$100-$200</option>
+          <option >$200-$300</option>
           <option>$300-$500</option>
         </select>
       </div>

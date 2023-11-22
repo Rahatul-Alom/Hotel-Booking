@@ -8,7 +8,6 @@ const ShowRoomsDetails = () => {
 
 
     const roomDetails = useLoaderData();
-    console.log(roomDetails)
 
     useEffect(()=>{
         const seeRoomDetails = roomDetails.find((detail) => detail._id === _id);

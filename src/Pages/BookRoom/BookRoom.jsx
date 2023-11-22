@@ -22,7 +22,7 @@ const BookRoom = () => {
           price_per_night,
           date,
           image,
-          room: room_title,
+          room_title: room_title,
           room_id: _id,
       }
       console.log(booking)
@@ -79,7 +79,7 @@ const BookRoom = () => {
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Due Ammount</span>
+              <span className="label-text">Room Price</span>
             </label>
             <input
               type="text"

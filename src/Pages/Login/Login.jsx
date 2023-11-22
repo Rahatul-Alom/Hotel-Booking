@@ -25,9 +25,7 @@ const Login = () => {
         .then(result => {
           console.log(result.user)
           const user = {email}
-            
-            // navigate after login
-            // navigate(location?.state ? location.state : "/" )
+           
             
         axios.post('http://localhost:5000/jwt', user, {withCredentials:true})
           .then(res => {

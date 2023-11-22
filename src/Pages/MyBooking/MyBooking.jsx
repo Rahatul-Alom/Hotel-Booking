@@ -37,20 +37,56 @@ const MyBooking = () => {
                   'Deleted!',
                   'Your product has been deleted fom your cart.',
                   'success'
-                )               
+                )   
+                const remainig = bookings.filter(booking => booking._id !== id)
+                setBookings(remainig)            
               }
-              const remainig = bookings.filter(booking => booking._id !== id)
-              setBookings(remainig)
+
             })
           }
         })
+  }
+
+  
+  const handleUpdateDate = (event, id) =>{
+    event.preventDefault();
+    const form = event.target;
+    const date = form.date.value;
+    const updated = {date}
+    fetch(`http://localhost:5000/bookings/${id}`, {
+      method: 'PATCH',
+      headers:{
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(updated)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        if(data.modifiedCount > 0){
+           // update state
+           const remainig = bookings.filter(booking => booking._id !== id);
+           const updated = bookings.find(booking => booking._id === id);
+           updated.date = date;
+           const newBookings = [updated, ...remainig]
+           setBookings(newBookings)
+          Swal.fire({
+            title: 'Success!',
+            text: 'Booking Date Updated successfully',
+            icon: 'success',
+            confirmButtonText: 'Go Back'
+          })
+        }
+        
+      })
+
   }
 
 
   return (
     <div className="grid-cols-1 space-y-12">
       {
-        bookings.map(booking => <ShowMybookings key={booking._id} booking={booking} handleDelete ={handleDelete}></ShowMybookings>)
+        bookings.map(booking => <ShowMybookings key={booking._id} booking={booking} handleDelete ={handleDelete} handleUpdateDate ={handleUpdateDate}></ShowMybookings>)
       }
 
     </div>

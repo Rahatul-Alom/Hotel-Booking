@@ -11,6 +11,7 @@ import MyBooking from "../Pages/MyBooking/MyBooking";
 import PrivateRoutes from "./PrivateRoutes";
 import ShowRoomsDetails from "../Pages/Rooms/RoomsDetails";
 import BookRoom from "../Pages/BookRoom/BookRoom"
+import ReviewRoom from "../Pages/ReviewRoom/ReviewRoom";
 
 const router = createBrowserRouter([
     {
@@ -56,7 +57,12 @@ const router = createBrowserRouter([
           path: '/bookRoom/:id',
           element: <PrivateRoutes><BookRoom></BookRoom></PrivateRoutes>,
           loader: ({params})=> fetch(`http://localhost:5000/rooms/${params.id}`)
-        }
+        },
+        {
+          path:'/reviewRoom/:id',
+          element: <PrivateRoutes><ReviewRoom></ReviewRoom></PrivateRoutes>,
+          loader: ({params})=> fetch(`http://localhost:5000/rooms/${params.id}`)
+        },
       ]
 
     },
