@@ -1,14 +1,22 @@
-import { useLoaderData } from "react-router-dom";
 import ShowRooms from "./ShowRooms";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
+const prices = [
+  '$0-$100',
+  '$100-$200',
+  '$200-$300',
+  '$300-$500'
+]
+
 const Rooms = () => {
+  const [price, setPrice] = useState('')  
+  console.log(price)
 
   const axios = useAxiosSecure();
   const getRooms = async ()=>{
-    const res = await  axios.get('/rooms');
+    const res = await  axios.get(`/rooms?price=${price}`);
     return res;
   }
 
@@ -17,7 +25,7 @@ const Rooms = () => {
     isLoading, 
     isError,
     error} = useQuery({
-    queryKey: ['rooms'],
+    queryKey: ['rooms',price],
     queryFn: getRooms,
 
   })
@@ -35,15 +43,16 @@ const Rooms = () => {
     <div className="mx-auto max-w-7xl ">
       <div className="mt-20">
         <h1 className="font-bold my-4 text-xl">Filter with price range</h1>
-        <select selected defaultValue={ 'Select Price'} className="select select-bordered w-full max-w-xs">
-        {/* onChange={(e) => setSelectedPrice(e.target.value)} */}
-          <option disabled>
-            Select Price
-          </option>
-          <option >$0-$100</option>
-          <option >$100-$200</option>
-          <option >$200-$300</option>
-          <option>$300-$500</option>
+        <select selected defaultValue={ 'Select Price'} className="select select-bordered w-full max-w-xs" 
+          onChange={(e) => setPrice(e.target.value)}
+
+        >
+          <option disabled>Select Price</option>
+          {
+            prices.map((price)=>(
+              <option key={price} value={price}>{price}</option>
+            ))  
+          }
         </select>
       </div>
       <div className="grid grid-cols-3 gap-9 mt-20">

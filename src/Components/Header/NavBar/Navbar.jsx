@@ -91,17 +91,17 @@ const NavBar = () => {
                 <div className="w-10 rounded-full mr-3">
                   <img className="rounded-full" src={user.photoURL} />
                 </div>
-                 <button onClick={handleSingOut} className="btn bg-[#aa825d] text-white font-semibold">Sing Out</button>
+                 <button onClick={handleSingOut} className="btn bg-amber-700 text-white font-semibold">Sing Out</button>
               </>
             :
              <>
             <div className="w-10 rounded-full mr-4">
                <img className="rounded-full" src="https://i.ibb.co/XsDHQ4n/user-Defaulf.png" />
              </div>
-            <Link to="/Login"><button className="btn bg-[#aa825d] text-white font-semibold">Login</button></Link>
+            <Link to="/Login"><button className="btn bg-amber-700 text-white font-semibold">Login</button></Link>
             </>
         }
-        <button onClick={changeTheme} className="btn bg-[#aa825d]"><BsMoonFill className="text-white"></BsMoonFill></button>
+        <button onClick={changeTheme} className="btn bg-amber-700"><BsMoonFill className="text-white"></BsMoonFill></button>
       </div>
     </div>
   );

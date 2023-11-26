@@ -1,0 +1,99 @@
+[
+    {
+      "room_title": "Deluxe Suite",
+      "price": 200,
+      "special_range": "May-August",
+      "size": "500 sq ft",
+      "location": "Cox's Bazar, Bangladesh",
+      "image": "https://i.ibb.co/ZL413fB/3442-768x461.webp",
+      "description": "Indulge in the epitome of luxury with our Deluxe Suite. This spacious and opulent accommodation offers a breathtaking view of the cityscape. Ideal for those who appreciate the finer things in life. Book now and enjoy a 10% discount for stays of 3 nights or more.",
+      "special_offer": "10% discount for bookings of 3 nights or more"
+    },
+    {
+      "room_title": "Executive Room",
+      "price": 150,
+      "special_range": "All year round",
+      "size": "400 sq ft",
+      "location": "Cox's Bazar, Bangladesh",
+      "image": "https://i.ibb.co/T2XMZV4/19-6-1000x700.jpg",
+      "rating": 5,
+      "description": "Experience a perfect blend of comfort and functionality in our Executive Room. Tailored for business travelers, this room offers a spacious workspace and modern amenities. Achieve a perfect work-life balance during your stay. Reserve now and enjoy a special offer: Stay 4 nights, get the 5th night free.",
+      "special_offer": "Stay 4 nights, get the 5th night free"
+    },
+    {
+      "room_title": "Family Suite",
+      "price": 250,
+      "special_range": "School Holidays",
+      "size": "600 sq ft",
+      "location": "Cox's Bazar, Bangladesh",
+      "image": "https://i.ibb.co/6mbQz7b/20-6-1000x700.jpg",
+      "rating": 3,
+      "description": "Create lasting family memories in our Family Suite. Designed for families, this accommodation features interconnected rooms and kid-friendly amenities. Enjoy a perfect blend of comfort and convenience. Book now and benefit from a 20% discount for children under 12.",
+      "special_offer": "20% discount for children under 12"
+    },
+    {
+      "_id": "654c9687e2a60b023a9cc98e",
+      "room_title": "Standard Room",
+      "price": 100,
+      "special_range": "Off-Peak Season",
+      "size": "300 sq ft",
+      "location": "Cox's Bazar, Bangladesh",
+      "image": "https://i.ibb.co/R4yvxr2/21-6-1000x700.jpg",
+      "description": "Discover comfort and affordability in our Standard Room. Perfect for solo travelers or couples seeking a cozy retreat. Embrace a relaxing atmosphere during your stay. Take advantage of our weekday special: 15% off for Monday to Thursday bookings.",
+      "special_offer": "Weekday special: 15% off for Monday to Thursday bookings"
+    },
+    {
+      "room_title": "Luxury Penthouse",
+      "price": 400,
+      "special_range": "Year-end Celebrations",
+      "size": "800 sq ft",
+      "location": "Cox's Bazar, Bangladesh",
+      "image": "https://i.ibb.co/W0HsdhW/2319.webp",
+      "rating": 5,
+      "description": "Elevate your experience in our Luxury Penthouse. Immerse yourself in opulence with panoramic views and top-notch amenities. This exquisite accommodation is perfect for special occasions. Book now and enjoy a special offer: Book for New Year's Eve and receive complimentary champagne and dinner.",
+      "special_offer": "Book for New Year's Eve and receive complimentary champagne and dinner"
+    },
+    {
+      "room_title": "Ocean View Villa",
+      "price": 300,
+      "special_range": "Summer",
+      "size": "700 sq ft",
+      "location": "Cox's Bazar, Bangladesh",
+      "image": "https://i.ibb.co/Gv5HqJN/17-6.jpg",
+      "description": "Experience the epitome of luxury by the beach in our Ocean View Villa. Indulge in exclusive accommodations boasting stunning ocean views. Immerse yourself in a world of tranquility and elegance. Book now and enjoy a 15% discount for bookings made 90 days in advance.",
+      "special_offer": "15% off for bookings made 90 days in advance"
+    },
+    {
+      "room_title": "Honeymoon Suite",
+      "price": 180,
+      "special_range": "February",
+      "size": "450 sq ft",
+      "location": "Cox's Bazar, Bangladesh",
+      "image": "https://i.ibb.co/L6HJ8fR/18-6.jpg",
+      "rating": 5,
+      "description": "Celebrate love in style with our Honeymoon Suite. Designed for honeymooners, this romantic accommodation offers a dreamy escape. Book a minimum 5-night stay and enjoy a complimentary spa package.",
+      "special_offer": "Complimentary spa package with a minimum 5-night stay"
+    },
+    {
+      "room_title": "Mountain Retreat Cabin",
+      "price": 120,
+      "special_range": "Fall",
+      "size": "350 sq ft",
+      "location": "Cox's Bazar, Bangladesh",
+      "image": "https://i.ibb.co/khpzK1Y/1407953244000-177513283.webp",
+      "description": "Escape to the tranquility of the mountains in our Mountain Retreat Cabin. Immerse yourself in the cozy and rustic ambiance of this retreat. Book now and enjoy a special offer: 10% off for returning guests.",
+      "special_offer": "10% off for returning guests"
+    },
+    {
+      "room_title": "Business Class Room",
+      "price": 160,
+      "special_range": "Weekdays",
+      "size": "400 sq ft",
+      "location": "Cox's Bazar, Bangladesh",
+      "image": "https://i.ibb.co/Zdn6v6v/3964.webp",
+      "rating": 3,
+      "description": "Designed for business travelers, our Business Class Room features a dedicated workspace and high-speed internet. Experience comfort and productivity during your stay. Book now and enjoy a special offer: Free airport shuttle service with a minimum 3-night stay.",
+      "special_offer": "Free airport shuttle service with a minimum 3-night stay"
+    }
+  ]
+  

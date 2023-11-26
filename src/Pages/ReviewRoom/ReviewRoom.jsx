@@ -8,7 +8,7 @@ import "../../App.css";
 const ReviewRoom = () => {
   const rooms = useLoaderData();
   console.log(rooms)
-  const { _id, room_title , price_per_night } = rooms;
+  const { _id, room_title , price } = rooms;
   const { user } = useContext(AuthContext);
   const [selectedRating, setSelectedRating] = useState(0);
 
@@ -23,7 +23,7 @@ const ReviewRoom = () => {
     const roomReview = {
       roomID:_id,
       room_title,
-      price_per_night,
+      price,
       CastomarName: name,
       email,
       review,
@@ -129,7 +129,7 @@ const ReviewRoom = () => {
           </div>
           <div className="form-control mt-6">
             <input
-              className="btn bg-[#aa825d] text-white font-semibold"
+              className="btn bg-amber-700 text-white font-semibold"
               type="submit"
               value="Submit Your Review"
             />

@@ -21,7 +21,7 @@ const SpecialOffer = () => {
               Select a room and choose your dates within the specified period.
               The discount will be applied automatically at checkout.
             </p>
-            <button className="btn bg-[#aa825d] text-white font-semibold">
+            <button className="btn bg-amber-700 text-white font-semibold">
             <MdLocalOffer></MdLocalOffer> View Offer
             </button>
           </div>

@@ -9,7 +9,7 @@ import axios from "axios";
 
 const Login = () => {
     const {signIn} =useContext(AuthContext)
-    const {googleLogIn} = useContext(AuthContext)
+    const {googleLogIn, logout} = useContext(AuthContext)
     const location = useLocation();
     const navigate = useNavigate();
     console.log(location)
@@ -31,7 +31,11 @@ const Login = () => {
           .then(res => {
             console.log(res.data)
             if(res.data.success){
+              toast.success('user logedin successfull')
               navigate(location?.state ? location?.state : "/" )
+            }
+            else{
+              logout();
             }
           })
 
@@ -82,11 +86,11 @@ const Login = () => {
                   </label>
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn bg-[#aa825d] text-white font-semibold">Login</button>
+                  <button className="btn bg-amber-700 text-white font-semibold">Login</button>
                 </div>
               </form>
               <div className="text-center mt-3">
-              <button onClick={googleLogIn} className="btn rounded-lg hover:bg-slate-300 bg-[#aa825d] text-white font-semibold lg:px-20 md:px-20">
+              <button onClick={googleLogIn} className="btn rounded-lg hover:bg-slate-300 bg-amber-700 text-white font-semibold lg:px-20 md:px-20">
               <BiLogoGoogle className="text-xl" ></BiLogoGoogle>
                 Login wih google</button>
               </div>

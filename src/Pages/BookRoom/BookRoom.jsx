@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 const BookRoom = () => {
     const rooms = useLoaderData()
-    const {_id, room_title, price_per_night, image} = rooms;
+    const {_id, room_title, price, image} = rooms;
     const {user} = useContext(AuthContext)
 
     const hadleBooking = event =>{
@@ -19,7 +19,7 @@ const BookRoom = () => {
       const booking ={
           CastomarName: name,
           email, 
-          price_per_night,
+          price,
           date,
           image,
           room_title: room_title,
@@ -83,7 +83,7 @@ const BookRoom = () => {
             </label>
             <input
               type="text"
-              defaultValue={'$'+price_per_night}
+              defaultValue={'$'+price}
               className="input input-bordered"
               required
             />
@@ -112,7 +112,7 @@ const BookRoom = () => {
             />
           </div>
           <div className="form-control mt-6">
-            <input className="btn bg-[#aa825d] text-white font-semibold" type="submit" value="Book Now" />
+            <input className="btn bg-amber-700 text-white font-semibold" type="submit" value="Book Now" />
           </div>
           </div>
         </form>

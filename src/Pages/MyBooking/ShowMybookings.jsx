@@ -4,7 +4,7 @@ import {useState } from "react";
 import { Link, } from "react-router-dom";
 
 const ShowMybookings = ({ booking, handleDelete, handleUpdateDate }) => {
-  const { _id, CastomarName, price_per_night, room_title,date, image, room_id } = booking;
+  const { _id, CastomarName, price, room_title,date, image, room_id } = booking;
   console.log(booking);
     
 
@@ -17,7 +17,7 @@ const ShowMybookings = ({ booking, handleDelete, handleUpdateDate }) => {
         <div className="card-body">
           <h2 className="card-title">Room Name: {room_title}</h2>
           <p className="text-lg mt-2">
-            <b>Price Per Night: </b>${price_per_night}
+            <b>Price Per Night: </b>${price}
           </p>
           <p className="text-lg mt-">
             <b>Booked Date: </b>
@@ -30,7 +30,7 @@ const ShowMybookings = ({ booking, handleDelete, handleUpdateDate }) => {
           <div className="card-actions justify-end">
             {/* Open the modal using document.getElementById('ID').showModal() method */}
             <button
-              className="btn bg-[#aa825d] text-white font-semibold"
+              className="btn bg-amber-700 text-white font-semibold"
               onClick={() => document.getElementById("my_modal_1").showModal()}
             ><MdOutlineUpdate className="text-xl" /> 
              Update Date
