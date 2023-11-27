@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { MdAddHome } from "react-icons/md";
 import { Link, } from "react-router-dom";
+import ShowReview from "./ShowReview";
 const ShowRoomDetails = ({ details }) => {
-  const {_id, image, room_title, price, size, special_offer, description, location,} = details || {};
+  const {_id, image, room_title, price, size, special_offer, description, location} = details || {};
 
-  const [reviews, setReviews] = useState([]);
-
+  const [reviews, setReviews] = useState({});
+  console.log(reviews)
    
   useEffect(() => {
       if(_id){
@@ -14,7 +15,6 @@ const ShowRoomDetails = ({ details }) => {
         .then(data => setReviews(data))
       }
   }, [_id]);
-  console.log(_id)
 
   return (
       <div>
@@ -37,13 +37,12 @@ const ShowRoomDetails = ({ details }) => {
         </div>
     </div>
      {/* Display reviews */}
-      <div>
-        <h2 className="text-2xl font-bold mt-5">Reviews:</h2>
-          <ul>
-              <li>{reviews.review}</li>
-              <li>{reviews.CastomarName}</li>
-              <li>{reviews.rating}</li>
-          </ul>
+      <div className="mx-auto max-w-7xl">
+      {Object.keys(reviews).length > 0  ? (
+          <ShowReview reviews={reviews} />
+        ) : (
+          <p className="text-xl font-bold text-amber-700 text-center mt-2">No review yet.</p>
+        )}
       </div>
   </div>
   );

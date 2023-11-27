@@ -25,7 +25,7 @@ const Rooms = () => {
     isLoading, 
     isError,
     error} = useQuery({
-    queryKey: ['rooms',price],
+    queryKey: ['rooms'],
     queryFn: getRooms,
 
   })

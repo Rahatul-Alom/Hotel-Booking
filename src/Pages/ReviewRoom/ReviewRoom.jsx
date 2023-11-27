@@ -17,6 +17,7 @@ const ReviewRoom = () => {
     const form = event.target;
     const name = form.name.value;
     const email = user?.email;
+    const Userphoto = user?.photoURL;
     const roomTitle = user?.room_title;
     const review = form.review.value;
 
@@ -28,6 +29,7 @@ const ReviewRoom = () => {
       email,
       review,
       rating: selectedRating,
+      Userphoto
     };
     console.log(roomReview);
 
@@ -87,10 +89,24 @@ const ReviewRoom = () => {
             </label>
             <input
               type="text"
+              name="email"
               placeholder="email"
               defaultValue={user?.email}
               className="input input-bordered"
               required
+            />
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">User Photo</span>
+            </label>
+            <input
+              type="text"
+              placeholder="user photo url"
+              defaultValue={user?.photoURL}
+              className="input input-bordered"
+              required
+              name="photo"
             />
           </div>
           <div className="form-control">
