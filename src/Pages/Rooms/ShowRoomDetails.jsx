@@ -5,7 +5,7 @@ import ShowReview from "./ShowReview";
 const ShowRoomDetails = ({ details }) => {
   const {_id, image, room_title, price, size, special_offer, description, location} = details || {};
 
-  const [reviews, setReviews] = useState({});
+  const [reviews, setReviews] = useState([]);
   console.log(reviews)
    
   useEffect(() => {
@@ -38,8 +38,8 @@ const ShowRoomDetails = ({ details }) => {
     </div>
      {/* Display reviews */}
       <div className="mx-auto max-w-7xl">
-      {Object.keys(reviews).length > 0  ? (
-          <ShowReview reviews={reviews} />
+      {reviews?.length > 0  ? (
+          reviews?.map((reviews)=><ShowReview key={reviews._id} reviews={reviews}></ShowReview>)
         ) : (
           <p className="text-xl font-bold text-amber-700 text-center mt-2">No review yet.</p>
         )}

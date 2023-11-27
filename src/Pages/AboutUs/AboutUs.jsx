@@ -1,5 +1,11 @@
+import Aos from "aos";
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const AboutUs = () => {
+    useEffect(()=>{
+        Aos.init();
+    },[])
     return (
         <div>
            <div className="carousel w-full">
@@ -32,7 +38,7 @@ const AboutUs = () => {
         </div>
         </div>
         </div>
-            <div className='my-12 mx-auto max-w-6xl' >
+            <div className='my-12 mx-auto max-w-6xl'data-aos="fade-up" data-aos-easing="ease-in-sine" data-aos-duration="600" >
                 <h1 className='text-6xl font-bold text-amber-700 text-center'>About Us</h1>
                  <p className='font-semibold text-lg mt-7 text-center'>We are not just hoteliers; we are creators of unparalleled hospitality experiences. With an unwavering commitment to perfection and a meticulous focus on every detail, we elevate ordinary stays into extraordinary moments of luxury. Our mission is clear - to turn your accommodation dreams into a reality, offering a haven of opulence and personalized service. From the grandeur of our suites to the finesse in our amenities, we redefine hospitality, ensuring every stay with us is a memorable journey into refined indulgence. Welcome to a world where extraordinary hospitality meets your every desire.</p>
                 <h1 className='text-4xl mt-12 font-bold text-amber-700 text-center'>Our Commitment</h1>

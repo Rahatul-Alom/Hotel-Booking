@@ -1,7 +1,16 @@
+import Aos from "aos";
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
 import {AiOutlineCalendar} from 'react-icons/ai'; 
+
 const NewsLetter = () => {
+  useEffect(()=>{
+    Aos.init();
+  },[])
+
   return (
-    <div className=" my-28 mx-auto max-w-7xl">
+    <div className=" my-28 mx-auto max-w-7xl"data-aos="zoom-in" data-aos-delay="100" data-aos-duration="600" data-aos-easing="ease-in-sine">
       <h1 className="text-6xl font-bold text-center pb-12">Latest News</h1>  
         <div className='flex flex-col lg:flex-row gap-7 items-center'>
         <div className="w-96 bg-base-100 shadow-xl h-96">

@@ -1,7 +1,7 @@
 import { FaStar } from "react-icons/fa";
 
 const ShowReview = ({ reviews }) => {
-  const {  Userphoto, CastomarName, review, rating} = reviews ||{};
+  const { Userphoto, CastomarName, review, rating} = reviews ||{};
   const starArray = Array.from({ length: 5 }, (_, index) => (
     <FaStar size={25} key={index} color={index < rating ? "gold" : "gray"} />
   ));
