@@ -1,7 +1,11 @@
+import { Helmet } from "react-helmet-async";
 
 const ContuctUs = () => {
     return (
         <div>
+        <Helmet>
+          <title>Hotel Booking | Contact Us</title>
+        </Helmet>
              <h1 className='mt-9 text-7xl text-center text-amber-700 font-bold'>Contact Us</h1>
 
             <div className='flex flex-col md:flex-col lg:flex-row justify-center items-center my-12 mx-auto max-w-6xl'>

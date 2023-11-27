@@ -5,6 +5,7 @@ import { BiLogoGoogle } from 'react-icons/bi';
 import { useContext } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -49,6 +50,9 @@ const Login = () => {
 
     return (
         <div>
+         <Helmet>
+          <title>Hotel Booking | login</title>
+        </Helmet>
         <h1 className="text-5xl text-center font-bold mx-5 pt-7 text-amber-500 ">Login your account</h1>
         <div className="hero min-h-screen">
           <div className="hero-content ">

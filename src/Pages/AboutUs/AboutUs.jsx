@@ -1,6 +1,7 @@
 import Aos from "aos";
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 const AboutUs = () => {
     useEffect(()=>{
@@ -8,6 +9,9 @@ const AboutUs = () => {
     },[])
     return (
         <div>
+        <Helmet>
+          <title>Hotel Booking | About Us</title>
+        </Helmet>
            <div className="carousel w-full">
             <div id="slide1" className="carousel-item relative w-full">
             <img src="https://i.ibb.co/FVCmn4v/2319.webp" className="w-full" />

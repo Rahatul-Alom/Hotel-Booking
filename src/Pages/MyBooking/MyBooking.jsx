@@ -3,6 +3,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import ShowMybookings from "./ShowMybookings";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const MyBooking = () => {
   const { user } = useContext(AuthContext);
@@ -85,6 +86,9 @@ const MyBooking = () => {
 
   return (
     <div className="grid-cols-1 space-y-12">
+        <Helmet>
+          <title>Hotel Booking | My Booking</title>
+        </Helmet>
       {
         bookings.map(booking => <ShowMybookings key={booking._id} booking={booking} handleDelete ={handleDelete} handleUpdateDate ={handleUpdateDate}></ShowMybookings>)
       }

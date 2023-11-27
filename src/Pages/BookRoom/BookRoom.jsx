@@ -27,7 +27,7 @@ const BookRoom = () => {
       }
       console.log(booking)
 
-      fetch('https://hotel-booking-webapp-server.vercel.app/bookings', { credentials:"include",
+      fetch('https://hotel-booking-webapp-server.vercel.app/bookings', { 
         method: 'POST',
         headers: {
           'content-type': 'application/json'

@@ -5,6 +5,7 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Aos from "aos";
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 const prices = [
   '$0-$100',
@@ -49,6 +50,9 @@ const Rooms = () => {
 
     return (
     <div className="mx-auto max-w-7xl ">
+        <Helmet>
+          <title>Hotel Booking | Room</title>
+        </Helmet>
       <div className="mt-20">
         <h1 className="font-bold my-4 text-xl">Filter with price range</h1>
         <select selected defaultValue={ 'Select Price'} className="select select-bordered w-full max-w-xs" 
