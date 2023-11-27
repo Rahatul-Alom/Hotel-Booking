@@ -17,7 +17,7 @@ const MyBooking = () => {
   }, [url, axiosSecure]);
 
   const handleDelete = id =>{
-        fetch(`http://localhost:5000/bookings/${id}`,{
+        fetch(`https://hotel-booking-webapp-server.vercel.app/bookings/${id}`,{
             method: 'DELETE'
         })
         .then(res => res.json())
@@ -53,7 +53,7 @@ const MyBooking = () => {
     const form = event.target;
     const date = form.date.value;
     const updated = {date}
-    fetch(`http://localhost:5000/bookings/${id}`, {
+    fetch(`https://hotel-booking-webapp-server.vercel.app/bookings/${id}`, {
       method: 'PATCH',
       headers:{
         'content-type': 'application/json'

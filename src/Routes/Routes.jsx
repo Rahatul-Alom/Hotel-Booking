@@ -42,12 +42,12 @@ const router = createBrowserRouter([
         {
           path: '/rooms',
           element: <Rooms></Rooms>,
-          loader: ()=> fetch(`http://localhost:5000/rooms`),
+          loader: ()=> fetch(`https://hotel-booking-webapp-server.vercel.app/rooms`),
         },
         {
           path: "rooms/:_id",
           element: <ShowRoomsDetails></ShowRoomsDetails>,
-          loader: ()=> fetch(`http://localhost:5000/rooms`)
+          loader: ()=> fetch(`https://hotel-booking-webapp-server.vercel.app/rooms`)
         },
         {
           path: '/myBooking',
@@ -56,12 +56,12 @@ const router = createBrowserRouter([
         {
           path: '/bookRoom/:id',
           element: <PrivateRoutes><BookRoom></BookRoom></PrivateRoutes>,
-          loader: ({params})=> fetch(`http://localhost:5000/rooms/${params.id}`)
+          loader: ({params})=> fetch(`https://hotel-booking-webapp-server.vercel.app/rooms/${params.id}`)
         },
         {
           path:'/reviewRoom/:id',
           element: <PrivateRoutes><ReviewRoom></ReviewRoom></PrivateRoutes>,
-          loader: ({params})=> fetch(`http://localhost:5000/rooms/${params.id}`)
+          loader: ({params})=> fetch(`https://hotel-booking-webapp-server.vercel.app/rooms/${params.id}`)
         },
       ]
 

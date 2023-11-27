@@ -11,7 +11,7 @@ const ShowRooms = ({rooms}) => {
 
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/reviews/${_id}`)
+        fetch(`https://hotel-booking-webapp-server.vercel.app/reviews/${_id}`)
              .then(res => res.json())
             .then(data => setReviews(data))
     },[_id])

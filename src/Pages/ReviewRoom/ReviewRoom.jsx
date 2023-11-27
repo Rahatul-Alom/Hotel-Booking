@@ -33,7 +33,7 @@ const ReviewRoom = () => {
     };
     console.log(roomReview);
 
-    fetch(`http://localhost:5000/reviews/${_id}`, {
+    fetch(`https://hotel-booking-webapp-server.vercel.app/reviews/${_id}`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -7,14 +7,24 @@ const ShowRoomDetails = ({ details }) => {
 
   const [reviews, setReviews] = useState([]);
   console.log(reviews)
+
+  const [selectedDate, setSelectedDate] = useState('');
+  const [isBookNowEnabled, setIsBookNowEnabled] = useState(false);
    
   useEffect(() => {
       if(_id){
-        fetch(`http://localhost:5000/reviews/${_id}`)
+        fetch(`https://hotel-booking-webapp-server.vercel.app/reviews/${_id}`)
         .then(res => res.json())
         .then(data => setReviews(data))
       }
   }, [_id]);
+
+  const handleDateChange = (e) => {
+    const date = e.target.value;
+    setSelectedDate(date);
+    setIsBookNowEnabled(date !== ""); // Enable the button if a date is selected
+  };
+
 
   return (
       <div>
@@ -29,11 +39,23 @@ const ShowRoomDetails = ({ details }) => {
             <p className="text-lg mt-1"><b>Location:</b> {location}</p>
             <p className="text-lg mt-1"><b>Special Offer:</b> {special_offer}</p>
             <p className="text-lg text-justify mt-2"><b>Description:</b> {description}</p>
-            <input className="border-2 border-black p-2 mt-4 rounded-lg" type="date" name="" id="" /> <br />
-          <Link to={`/bookRoom/${_id}`}>
-              <button className="btn mt-5 bg-amber-600 text-white font-semibold"><MdAddHome className="text-xl" />
-            Book Now</button>
-          </Link>
+            <input onChange={handleDateChange} className="border-2 border-black p-2 mt-4 rounded-lg" type="date" name="" id="" /> <br />
+            {isBookNowEnabled ? (
+            <Link to={`/bookRoom/${_id}`}>
+              <button className={`btn mt-5 bg-amber-600 text-white font-semibold`}>
+                <MdAddHome className="text-xl" />
+                Book Now
+              </button>
+            </Link>
+          ) : (
+            <button
+              className={`btn mt-5 bg-amber-600 text-white font-semibold`}
+              disabled={!isBookNowEnabled}
+            >
+              <MdAddHome className="text-xl" />
+              Book Now
+            </button>
+          )}
         </div>
     </div>
      {/* Display reviews */}
