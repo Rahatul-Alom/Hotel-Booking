@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 
 const Register = () => {
     const [singUpError, setSingUpError] = useState('')
-    const {createUser, updateUserProfile} = useContext(AuthContext)
+    const {createUser, updateProfile} = useContext(AuthContext)
     const handleRegister = e =>{
     e.preventDefault();
     console.log(e.currentTarget)
@@ -35,6 +35,7 @@ const Register = () => {
 
     // create user
     createUser(email, password)
+      updateProfile(name, photo)
         .then(result =>{
             console.log(result)
             Swal.fire({
@@ -114,7 +115,7 @@ const Register = () => {
                   </label>
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn bg-amber-700 text-white font-semibold">Register</button>
+                  <button className="btn bg-amber-600 text-white font-semibold">Register</button>
                 </div>
                 <p className="text-center mt-3">
                   Already have an account ? Please{" "}

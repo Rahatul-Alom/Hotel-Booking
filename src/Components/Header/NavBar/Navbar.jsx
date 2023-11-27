@@ -5,29 +5,7 @@ import { BsMoonFill } from 'react-icons/bs';
 
 const NavBar = () => {
   const {user, logOut} = useContext(AuthContext)
-  const [mode, setMode] = useState('light')
 
-   function changeTheme () {
-    const html = document.documentElement
-
-    if (mode === 'light') {
-      html.setAttribute('data-theme', 'dark');
-      setMode('dark');
-      localStorage.setItem('mode', 'dark')
-    } else {
-      html.setAttribute('data-theme', 'light');
-      setMode('light');
-      localStorage.setItem('mode', 'light')
-    }
-    
-  }
-
-  useEffect(()=>{
-    const currentMode = localStorage.getItem('mode') || 'light'
-    setMode(currentMode)
-    const html = document.documentElement
-    html.setAttribute('data-theme', currentMode)
-  },[])
 
   const handleSingOut = () =>{
     logOut()
@@ -91,17 +69,16 @@ const NavBar = () => {
                 <div className="w-10 rounded-full mr-3">
                   <img className="rounded-full" src={user.photoURL} />
                 </div>
-                 <button onClick={handleSingOut} className="btn bg-amber-700 text-white font-semibold">Sing Out</button>
+                 <button onClick={handleSingOut} className="btn bg-amber-600 text-white font-semibold">Sing Out</button>
               </>
             :
              <>
             <div className="w-10 rounded-full mr-4">
                <img className="rounded-full" src="https://i.ibb.co/XsDHQ4n/user-Defaulf.png" />
              </div>
-            <Link to="/Login"><button className="btn bg-amber-700 text-white font-semibold">Login</button></Link>
+            <Link to="/Login"><button className="btn bg-amber-600 text-white font-semibold">Login</button></Link>
             </>
         }
-        <button onClick={changeTheme} className="btn bg-amber-700"><BsMoonFill className="text-white"></BsMoonFill></button>
       </div>
     </div>
   );

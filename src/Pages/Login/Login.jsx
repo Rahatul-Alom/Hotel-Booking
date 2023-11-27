@@ -86,11 +86,11 @@ const Login = () => {
                   </label>
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn bg-amber-700 text-white font-semibold">Login</button>
+                  <button className="btn bg-amber-600 text-white font-semibold">Login</button>
                 </div>
               </form>
               <div className="text-center mt-3">
-              <button onClick={googleLogIn} className="btn rounded-lg hover:bg-slate-300 bg-amber-700 text-white font-semibold lg:px-20 md:px-20">
+              <button onClick={googleLogIn} className="btn rounded-lg hover:bg-slate-300 bg-amber-600 text-white font-semibold lg:px-20 md:px-20">
               <BiLogoGoogle className="text-xl" ></BiLogoGoogle>
                 Login wih google</button>
               </div>

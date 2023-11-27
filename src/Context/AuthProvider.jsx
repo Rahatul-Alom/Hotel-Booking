@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut,} from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile,} from "firebase/auth";
 import app from "../Firebase/firebase.config";
 import axios from "axios";
 
@@ -13,10 +13,22 @@ const AuthProvider = ({children}) => {
     const [loading, setLoading] =useState(true);
 
     // create user
-    const createUser = (email, pasword) =>{
-       setLoading(true)
-        return createUserWithEmailAndPassword(auth, email, pasword)
-    }
+    const createUser = async (email, password, userName, photoUrl) => {
+        setLoading(true);
+        try {
+          const authUser = await createUserWithEmailAndPassword(auth, email, password);
+          // Update user profile immediately after account creation
+          await updateProfile(authUser.user, { displayName: userName, photoURL: photoUrl });
+          // Set the updated user to the state
+          setUser(authUser.user);
+          setLoading(false);
+          return authUser;
+        } catch (error) {
+          setLoading(false);
+          throw error;
+        }
+      };
+    
 
     // singin user
     const signIn = (email,pasword)=>{
@@ -61,7 +73,7 @@ const AuthProvider = ({children}) => {
         }
     },[])
 
-    const authInfo = {user, createUser, googleLogIn,  loading, signIn, logOut}
+    const authInfo = {user, createUser, googleLogIn,  loading, signIn, logOut, updateProfile}
 
 
     return (

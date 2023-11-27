@@ -31,7 +31,7 @@ const ShowRoomDetails = ({ details }) => {
             <p className="text-lg text-justify mt-2"><b>Description:</b> {description}</p>
             <input className="border-2 border-black p-2 mt-4 rounded-lg" type="date" name="" id="" /> <br />
           <Link to={`/bookRoom/${_id}`}>
-              <button className="btn mt-5 bg-amber-700 text-white font-semibold"><MdAddHome className="text-xl" />
+              <button className="btn mt-5 bg-amber-600 text-white font-semibold"><MdAddHome className="text-xl" />
             Book Now</button>
           </Link>
         </div>

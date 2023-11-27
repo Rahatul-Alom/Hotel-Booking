@@ -145,7 +145,7 @@ const ReviewRoom = () => {
           </div>
           <div className="form-control mt-6">
             <input
-              className="btn bg-amber-700 text-white font-semibold"
+              className="btn bg-amber-600 text-white font-semibold"
               type="submit"
               value="Submit Your Review"
             />

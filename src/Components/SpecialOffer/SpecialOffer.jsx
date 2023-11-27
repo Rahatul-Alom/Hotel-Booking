@@ -1,15 +1,24 @@
 import {MdLocalOffer} from 'react-icons/md'; 
+import Aos from "aos";
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
 const SpecialOffer = () => {
+
+  useEffect(()=>{
+    Aos.init();
+},[])
+
   return (
     <div>
       <h1 className="text-6xl font-bold text-center pt-24">Special Offer!!</h1>
       <div className="hero pt-9">
         <div className="hero-content flex-col lg:flex-row">
-          <img
+          <img data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="500"
             src="https://i.ibb.co/ZL413fB/3442-768x461.webp"
             className="w-full rounded-lg shadow-2xl"
           />
-          <div>
+          <div data-aos="fade-left" data-aos-easing="ease-in-sine" data-aos-duration="500">
             <h1 className="text-5xl font-bold leading-tight">
               25% off family bookings in December
             </h1>
@@ -21,7 +30,7 @@ const SpecialOffer = () => {
               Select a room and choose your dates within the specified period.
               The discount will be applied automatically at checkout.
             </p>
-            <button className="btn bg-amber-700 text-white font-semibold">
+            <button className="btn bg-amber-600 text-white font-semibold">
             <MdLocalOffer></MdLocalOffer> View Offer
             </button>
           </div>

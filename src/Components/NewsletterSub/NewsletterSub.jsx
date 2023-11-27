@@ -11,7 +11,7 @@ const NewsletterSub = () => {
                 </div>
                 <div className="flex justify-center flex-row items-center mt-7 relative w-full">
                     <input type="text" placeholder="Your Email"className="rounded-l-lg p-4  w-full max-w-xs"/>
-                    <button type="submit" className="bg-amber-700 hover:bg-amber-300 text-white p-4 rounded-r-lg font-bold h-full" id="apply-btn" disabled>Subscribe</button>
+                    <button type="submit" className="bg-amber-600 hover:bg-amber-300 text-white p-4 rounded-r-lg font-bold h-full" id="apply-btn" disabled>Subscribe</button>
                 </div>
             </div>
         </div>

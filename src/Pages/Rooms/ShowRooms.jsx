@@ -1,10 +1,35 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { FaStar } from 'react-icons/fa';
+import { useEffect, useState } from "react";
 
 const ShowRooms = ({rooms}) => {
-    const {image,price, rating, room_title} = rooms || {};
-    const starArray = Array.from({ length: 5 }, (_, index) => (
-        <FaStar size={25} key={index} color={index < rating ? "gold" : "gray"} />
+    const {image,price, room_title} = rooms || {};
+
+    const [reviews, setReviews] = useState({})
+    console.log(reviews)
+
+    const {_id} = useParams();
+    console.log(_id)
+
+    useEffect(()=>{
+        fetch(`http://localhost:5000/reviews/${_id}`)
+             .then(res => res.json())
+            .then(data => setReviews(data))
+    },[_id])
+
+    const calculateAverageRating = () => {
+        const reviewArray = Object.values(reviews); 
+        if (reviewArray.length === 0) {
+          return 0; 
+        }
+    
+        const totalRating = reviewArray.reduce((sum, review) => sum + review.rating, 0);
+        return totalRating / reviewArray.length;
+      };
+    
+      const averageRating = calculateAverageRating();
+      const starArray = Array.from({ length: 5 }, (_, index) => (
+        <FaStar size={25} key={index} color={index < averageRating ? "gold" : "gray"} />
       ));
     return (
         <div className="">
@@ -16,7 +41,7 @@ const ShowRooms = ({rooms}) => {
                     <h2 className="font-semibold text-xl">Price per night: ${price}</h2>
                     <p className="flex">{starArray}</p>
                     <div className="card-actions justify-end">
-                        <div className="badge badge-outline">Review (0)</div> 
+                        <div className="badge badge-outline">Review ({Object.keys(reviews).length})</div> 
                      </div> 
                  </div>    
             </div>

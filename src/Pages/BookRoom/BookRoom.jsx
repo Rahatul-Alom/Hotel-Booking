@@ -112,7 +112,7 @@ const BookRoom = () => {
             />
           </div>
           <div className="form-control mt-6">
-            <input className="btn bg-amber-700 text-white font-semibold" type="submit" value="Book Now" />
+            <input className="btn bg-amber-600 text-white font-semibold" type="submit" value="Book Now" />
           </div>
           </div>
         </form>

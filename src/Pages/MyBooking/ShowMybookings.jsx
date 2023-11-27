@@ -30,7 +30,7 @@ const ShowMybookings = ({ booking, handleDelete, handleUpdateDate }) => {
           <div className="card-actions justify-end">
             {/* Open the modal using document.getElementById('ID').showModal() method */}
             <button
-              className="btn bg-amber-700 text-white font-semibold"
+              className="btn bg-amber-600 text-white font-semibold"
               onClick={() => document.getElementById("my_modal_1").showModal()}
             ><MdOutlineUpdate className="text-xl" /> 
              Update Date
